@@ -1,0 +1,44 @@
+body{
+background-image:url("https://c4.wallpaperflare.com/wallpaper/403/173/85/computer-macro-light-glow-wallpaper-preview.jpg");
+background-size:cover;
+}
+
+#h1{
+color:#FF7400;
+font-family: 'Playball', cursive;
+font-weight:bold;
+text-align:center;
+font-size:50px;
+}
+
+#c1{
+background-image:url("https://i.pinimg.com/474x/e8/7d/d7/e87dd7c09e4bbeaa8143d2cf4091b8b3.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+}
+
+#h51{
+font-family: 'Piedra', cursive;
+font-size:40px;
+}
+
+#h61{
+font-family: 'Laila', serif;
+font-size:30px;
+}
+
+#p1{
+font-family: 'Libre Baskerville', serif;
+font-size:30px;
+margin-left:40px;
+margin-right:40px;
+}
+
+#a2{
+font-size:30px;
+}
+
+#a1{
+font-size:30px;
+color:yellow;
+}

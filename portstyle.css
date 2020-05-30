@@ -1,0 +1,68 @@
+#b {
+background-image:url("https://i.pinimg.com/originals/5c/9d/fb/5c9dfb06e1346beb5af50acb296b759c.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+text-align:center;
+}
+img{
+margin-left:50px;
+float:left;
+
+}
+img:hover{
+transform:scale(1.1);
+}
+.mh{
+margin-top:5%;
+font-family: 'Laila', serif;
+font-weight: 900;
+font-size: 50px;
+}
+h2{
+margin-top:0.5%;
+font-family: 'Laila', serif;
+font-size:45px;
+}
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+font-family: 'Laila', serif;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 20px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#contact{
+background-image:url("https://designshack.net/wp-content/uploads/best-poly-backgrounds.png");
+}

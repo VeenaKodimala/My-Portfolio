@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Customize Bootstrap progressbar
+		</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+		<style>
+			.progress {
+				height: 10px;
+				border-radius: 10px;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+				background-color: #B4BAD2;
+				border: solid 2px #B4BAD2;
+				overflow: visible;
+			}
+			.progress-bar {
+				background-color: #686E85;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+				text-align: right;
+				border-radius: 10px;
+				position: relative;
+			}
+			.progress-bar::before {
+				content: attr(aria-valuenow);
+				top: -40px;
+				padding: 5px;
+				background-color: #686E85;
+				border: solid 2px #B4BAD2;
+				border-radius: 10px;
+				position: absolute;
+				width: 60px;
+				z-index: 1;
+				color: #B4BAD2;
+				margin-left: -30px;
+				text-align: center;
+				font-family: "Roboto";
+			}
+			.progress-bar::after {
+				top: -14px;
+				height: 10px;
+				width: 14px;
+				background-color: #B4BAD2;
+				position: absolute;
+				content: " ";
+				z-index: 0;
+				transform: rotate(45deg);
+				margin-left: -8px;
+			}
+		</style>
+	</head>
+	<body style="margin-top: 100px">
+		<div class=" col-sm-6 col-sm-offset-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Customize Bootstrap progressbar
+					</h3>
+				</div>
+				<div class="panel-body" style="padding-top: 50px">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="0 %" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="btn-group" role="group" aria-label="...">
+						<button type="button" class="btn btn-default" onclick="progress.increment(10)">
+							Increment
+						</button>
+						<button type="button" class="btn btn-default" onclick="progress.decrement(10)">
+							Decrement
+						</button>
+						<button type="button"  class="btn btn-default"onclick="progress.reset()">
+							Reset
+						</button>
+						<button type="button"  class="btn btn-default"onclick="progress.complete()">
+							Complete
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="//code.jquery.com/jquery.min.js">
+	</script>
+	<script>
+		var progress = (function ($) {
+
+			var progress = $('.progress'),
+				progress_bar = $('.progress-bar'),
+				total_width = progress.width();
+
+			function calculatePercentage(increment_by,is_increment) {
+				var progress_percentage;
+				if (is_increment == true) {
+					progress_percentage = Math.round((progress_bar.width() / total_width) * 100 + increment_by) ;
+					progress_percentage = (progress_percentage > 100) ? 100 : progress_percentage;
+				} else {
+					progress_percentage = Math.round((progress_bar.width() / total_width) * 100 - increment_by) ;
+					progress_percentage = (progress_percentage < 0) ? 0 : progress_percentage;
+				}
+				return progress_percentage;
+			}
+			return{
+				increment: function (increment_by) {
+					var progress_percentage = calculatePercentage(increment_by, true);
+					progress_bar.css('width',progress_percentage + '%').attr('aria-valuenow', progress_percentage + ' %');
+				},
+				decrement: function (decrement_by) {
+					var progress_percentage = calculatePercentage(decrement_by, false);
+					progress_bar.css('width',progress_percentage+'%').attr('aria-valuenow', progress_percentage + ' %');
+				},
+				reset: function () {
+					progress_bar.css('width',0 + '%').attr('aria-valuenow', 0 + ' %');
+				},
+				complete: function () {
+					progress_bar.css('width',100 + '%').attr('aria-valuenow', 100 + ' %');
+				}
+			};
+		})( jQuery);
+
+	</script>
+</html>

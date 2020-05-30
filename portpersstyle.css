@@ -1,0 +1,42 @@
+body{
+background-image:url("https://wallup.net/wp-content/uploads/2017/03/27/438353-black-dark-abstract-3D-shards-glass-blue-bright-748x403.jpg");
+
+}
+ 
+#a1{
+font-size:30px;
+color:yellow;
+}
+
+#h1
+{
+font-family: 'Playball', cursive;
+color:#DC143C;
+font-size:50px;
+text-align:center;
+}
+
+#p1, #p2, #p3{
+margin-left:30px;
+margin-right:30px;
+font-size:20px;
+}
+
+#h51, #h52{
+font-family: 'Piedra', cursive;
+font-size:50px;
+}
+
+#h61,#h62{
+font-size:40px;
+}
+
+#hb1{
+font-family: 'Libre Baskerville', serif;
+font-weight:bold;
+font-size:20px;
+}
+
+
+
+
